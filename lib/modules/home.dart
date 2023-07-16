@@ -24,13 +24,15 @@ class _HomeeState extends State<Homee> {
 
 
       ),
-      body:SingleChildScrollView(
-        child: Stack(
+      body: Stack(
 
-          children: [
+        children: [
 
-            Container(
-              margin: EdgeInsets.symmetric(vertical: 170),
+          Expanded(
+            child: Container(
+
+
+              margin: EdgeInsets.symmetric(vertical: 220),
               width: 90,
               height: 90,
 
@@ -38,64 +40,51 @@ class _HomeeState extends State<Homee> {
 
 
             ),
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 0),
+          ),
+          Expanded(
+            child: Container(
+              height: 300,
+              width: double.infinity,
+              decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(90.0),),),
+             child:Slideshow(),
+            ),
+          ),
+          Expanded(
+            child: Container(
+
+              margin:EdgeInsets.fromLTRB(0,300,0,0 ),
+
+              decoration: BoxDecoration(color:Color(0xff00235B),borderRadius: BorderRadius.only(topRight: Radius.circular(90.0),),),
+              width: double.infinity,
+
+
               child: Column(
+
                 children: [
-                  Container(
-                      height: 250,
-                      width: double.infinity,
-                      decoration: BoxDecoration(color: Color(0xffffffff), borderRadius: BorderRadius.only(bottomLeft: Radius.circular(90.0),),),
-                      child: Slideshow()
-                  ),
+                  SizedBox(height: 80,),
+                  defButton(
+
+                      background: Color(0xff26549e),
+                      function: (){
+                      },
+                      text:"finance",icon: Icons.monetization_on_sharp ,iconcolor:darkblue),
+
+                  SizedBox(height: 60,),
+
+                  defButton(
+                      background: Color(0xff99b4e7),
+                      function:fun,
+                      text:"rate" ,icon: Icons.star,iconcolor: darkblue),
+                  SizedBox(height: 60,),
+                  defButton(
+                      background: Color(0xff99b4e7),
+                      function: (){
+                      },
+                      text:"academic" ,icon: Icons.museum,iconcolor:darkblue)
                 ],
-              ),
-            ),
-
-            Container(
-              padding: EdgeInsets.symmetric(vertical: 250),
-
-              child: Column(
-
-                children: [
-                Container(
-
-
-                  decoration: BoxDecoration(color:Color(0xff00235B),borderRadius: BorderRadius.only(topRight: Radius.circular(90.0),),),
-                  width: double.infinity,
-                  height: 630,
-
-                  child: Column(
-
-                    children: [
-                      SizedBox(height: 60,),
-                      defButton(
-
-                          background: Color(0xff26549e),
-                          function: (){
-                          },
-                          text:"finance",icon: Icon(Icons.monetization_on_sharp,color: Color(0xff00235B)) ),
-
-                      SizedBox(height: 60,),
-
-                      defButton(
-                          background: Color(0xff99b4e7),
-                          function: (){
-
-                          },
-                          text:"rate" ,icon: Icon(Icons.star,color: Color(0xff26549e))),
-                      SizedBox(height: 60,),
-                      defButton(
-                          background: Color(0xff99b4e7),
-                          function: (){
-                          },
-                          text:"academic" ,icon: Icon(Icons.museum,color: Color(0xff26549e) ,))
-                    ],
-                  ),),
-        ],),
-            ),
-          ],
-        ),
+              ),),
+          ),
+        ],
       ),
 
 

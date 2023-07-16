@@ -1,15 +1,19 @@
 
 import 'package:flutter/material.dart';
 import 'package:carousel_slider/carousel_slider.dart';
-
-
+Color darkblue=Color(0xff00235B);
+Color brightblue = Color(0xff99b4e7);
+void fun(){
+  print('hello');
+}
 Widget defButton({
    double? width,
    double? heigth,
   required Color background,
-  required Function function,
+  required Color iconcolor,
+   required Function function,
   required String text,
-  required Icon icon,
+  required IconData icon,
 
 }) =>
     Container(
@@ -17,10 +21,13 @@ Widget defButton({
   width: 270,
   height: 60,
   child: MaterialButton(
-    onPressed: function(),
+    onPressed: (){
+      function();
+      },
     child: Row(
       children: [
-        IconButton(onPressed: (){}, icon: icon),
+
+        Icon(icon,color:iconcolor),
         SizedBox(width: 35,),
         Text(
           text.toUpperCase(),
@@ -77,3 +84,4 @@ enlargeCenterPage: true,
 enableInfiniteScroll: true,
 ),
 );
+
